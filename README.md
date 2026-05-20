@@ -15,7 +15,7 @@
 
 Установите и запустите Kibana.
 
-`Cкриншот, где видно, что memcached запущен:`
+`Cкриншот, где видно:`
 
 ![img1](https://github.com/PhartomX/netology_ELK/blob/main/img/img1.png)
 
