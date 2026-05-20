@@ -31,9 +31,15 @@
 
 Установите и запустите Logstash и Nginx. С помощью Logstash отправьте access-лог Nginx в Elasticsearch.
 
-`Cкриншот с результатом выполнения:`
+`Cкриншот установки и запуска Logstash и Nginx:`
 
-![img3](https://github.com/PhartomX/netology_ELK/blob/main/img/img3.png)
+![img5](https://github.com/PhartomX/netology_ELK/blob/main/img/img5.png)
+
+![img6](https://github.com/PhartomX/netology_ELK/blob/main/img/img6.png)
+
+`Логи Nginx в интерфейсе Kibana:`
+
+![img7](https://github.com/PhartomX/netology_ELK/blob/main/img/img7.png)
 
 ---
 
