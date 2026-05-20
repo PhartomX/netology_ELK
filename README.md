@@ -16,11 +16,15 @@
 
 Установите и запустите Kibana.
 
-`Cкриншот, где видно:`
+`Cкриншот установки и запуска Elasticsearch и Kibana:`
 
-![img1](https://github.com/PhartomX/netology_ELK/blob/main/img/img1.png)
+![img2](https://github.com/PhartomX/netology_ELK/blob/main/img/img2.png)
 
+![img3](https://github.com/PhartomX/netology_ELK/blob/main/img/img3.png)
 
+`Cкриншот результата запроса:`
+
+![img4](https://github.com/PhartomX/netology_ELK/blob/main/img/img4.png)
 ---
 
 ### Задание 3. Logstash
@@ -29,7 +33,7 @@
 
 `Cкриншот с результатом выполнения:`
 
-![img2](https://github.com/PhartomX/netology_ELK/blob/main/img/img2.png)
+![img3](https://github.com/PhartomX/netology_ELK/blob/main/img/img3.png)
 
 ---
 
@@ -39,7 +43,7 @@
 
 `Cкриншот с результатом выполнения:`
 
-![img3](https://github.com/PhartomX/netology_ELK/blob/main/img/img3.png)
+![img4](https://github.com/PhartomX/netology_ELK/blob/main/img/img4.png)
 
 
 ---
