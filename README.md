@@ -5,9 +5,10 @@
 
 Установите и запустите Elasticsearch, после чего поменяйте параметр cluster_name на случайный.
 
-`Cкриншот`
+`Cкриншот установки и запуска Elasticsearch:`
 
 ![img1](https://github.com/PhartomX/netology_ELK/blob/main/img/img1.png)
+
 
 ---
 
