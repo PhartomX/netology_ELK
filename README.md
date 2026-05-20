@@ -49,7 +49,7 @@
 
 `Cкриншот с результатом выполнения:`
 
-![img4](https://github.com/PhartomX/netology_ELK/blob/main/img/img4.png)
+![img8](https://github.com/PhartomX/netology_ELK/blob/main/img/img8.png)
 
 
 ---
@@ -60,4 +60,4 @@
 
 `Cкриншот с результатом выполнения:`
 
-![img5](https://github.com/PhartomX/netology_ELK/blob/main/img/img5.png)
+![img10](https://github.com/PhartomX/netology_ELK/blob/main/img/img10.png)
