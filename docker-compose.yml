@@ -1,0 +1,92 @@
+#version: "3.9"
+services:
+  elasticsearch:
+    image: elasticsearch:8.15.0
+    container_name: netology-elasticsearch
+    environment:
+      - discovery.type=single-node
+      - xpack.security.enabled=false
+      - cluster.name=avsidorov-cluster
+      - "ES_JAVA_OPTS=-Xms1g -Xmx1g"
+    deploy:
+      resources:
+        limits:
+          memory: 2.5g
+    volumes:
+      - esdata:/usr/share/elasticsearch/data
+    ports:
+      - 9200:9200
+      - 9300:9300
+
+  kibana:
+    image: docker.elastic.co/kibana/kibana:8.15.0
+    container_name: netology-kibana
+    ports:
+      - "5601:5601"
+    depends_on:
+      - elasticsearch
+    environment:
+      - ELASTICSEARCH_HOSTS=http://elasticsearch:9200
+      
+  logstash:
+    image: docker.elastic.co/logstash/logstash:8.15.0
+    container_name: netology-logstash
+    ports:
+      - 5044:5044
+      #- 8080:8080
+    environment:
+      - "LS_JAVA_OPTS=-Xms1g -Xmx1g"
+    deploy:
+      resources:
+        limits:
+          memory: 1.5g  
+    volumes:
+      - ./logstash.conf:/usr/share/logstash/pipeline/logstash.conf:ro
+      #- nginx_logs:/var/log/nginx:ro
+    depends_on:
+      - elasticsearch
+  
+  filebeat:
+    image: docker.elastic.co/beats/filebeat:8.15.0
+    container_name: netology-filebeat
+    user: root
+    volumes:
+      - ./filebeat.yml:/usr/share/filebeat/filebeat.yml:ro
+      - apache_logs:/usr/local/apache2/logs:ro
+      #- nginx_logs:/var/log/nginx:ro 
+    deploy:
+      resources:
+        limits:
+          memory: 256m
+    depends_on:
+      - logstash
+  
+  apache_server:
+    image: httpd:latest
+    container_name: netology-apache_server
+    ports:
+      - 8080:80 
+    command: >
+      httpd-foreground 
+      -c "ErrorLog logs/error.log" 
+      -c "CustomLog logs/access.log common"
+    volumes:
+      - apache_logs:/usr/local/apache2/logs
+     
+  #nginx:
+  #  image: nginx:latest
+  #  container_name: netology-nginx
+  #  ports:
+  #    - 80:80
+  #  depends_on:
+  #    - logstash
+  #  volumes:
+  #    - nginx_logs:/var/log/nginx
+      
+volumes:
+  esdata:
+    driver: local
+  apache_logs:
+    driver: local  
+  #nginx_logs:
+  #  driver: local
