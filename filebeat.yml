@@ -1,0 +1,16 @@
+filebeat.inputs:
+  - type: log
+    enabled: true
+    paths:
+      #- /var/log/nginx/access.log
+      - /usr/local/apache2/logs/access.log
+
+output.logstash:
+  # Отправляем данные в контейнер logstash на порт 5044
+  hosts: ["logstash:5044"]
+
+# Отключаем встроенный сбор метрик для экономии памяти
+logging.level: info
+logging.to_stderr: true
+logging.to_files: false
+monitoring.enabled: false
