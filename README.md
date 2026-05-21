@@ -51,9 +51,11 @@
 
 ![img8](https://github.com/PhartomX/netology_ELK/blob/main/img/img8.png)
 
+![img9](https://github.com/PhartomX/netology_ELK/blob/main/img/img9.png)
+
 `Логи Nginx в интерфейсе Kibana через Filebeat:`
 
-![img9](https://github.com/PhartomX/netology_ELK/blob/main/img/img9.png)
+![img10](https://github.com/PhartomX/netology_ELK/blob/main/img/img10.png)
 
 ---
 
